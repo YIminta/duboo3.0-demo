@@ -16,4 +16,9 @@ public class OrderController {
     public String createOrder() {
         return orderService.createOrder();
     }
+
+    @GetMapping("/testOrder")
+    public String testOrder() {
+        return orderService.testOrder();
+    }
 }

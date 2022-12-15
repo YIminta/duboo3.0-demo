@@ -1,37 +1,21 @@
-# duboo3.0-demo
+# Dubbo3.0-demo
 
-#### 介绍
-Dubbo3.0入门教程与新特性介绍
+转自 https://www.yuque.com/renyong-jmovm/dadudu/pl9i3u#yE806
 
-#### 软件架构
-软件架构说明
+### Dubbo3.0入门教程与新特性介绍
 
+#### 注册模型的改变
+在服务注册领域，市面上有两种模型，一种是应用级注册，一种是接口级注册，在Spring Cloud中，一个应用是一个微服务，而在Dubbo2.7中，一个接口是一个微服务。
 
-#### 安装教程
+所以，Spring Cloud在进行服务注册时，是把应用名以及应用所在服务器的IP地址和应用所绑定的端口注册到注册中心，相当于key是应用名，value是ip+port，而在Dubbo2.7中，是把接口名以及对应应用的IP地址和所绑定的端口注册到注册中心，相当于key是接口名，value是ip+port。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+所以在Dubbo2.7中，一个应用如果提供了10个Dubbo服务，那么注册中心中就会存储10对keyvalue，而Spring Cloud就只会存一对keyvalue，所以以Spring Cloud为首的应用级注册是更加适合的。
 
-#### 使用说明
+所以Dubbo3.0中将注册模型也改为了应用级注册，提升效率节省资源的同时，通过统一注册模型，也为各个微服务框架的互通打下了基础。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 新一代RPC协议
+定义了全新的 RPC 通信协议 – Triple，一句话概括 Triple：它是基于 HTTP/2 上构建的 RPC 协议，完全兼容 gRPC，并在此基础上扩展出了更丰富的语义。 使用 Triple 协议，用户将获得以下能力
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. 更容易到适配网关、Mesh架构，Triple 协议让 Dubbo 更方便的与各种网关、Sidecar 组件配合工作。
+2. 多语言友好，推荐配合 Protobuf 使用 Triple 协议，使用 IDL 定义服务，使用 Protobuf 编码业务数据。
+3. 流式通信支持。Triple 协议支持 Request Stream、Response Stream、Bi-direction Stream

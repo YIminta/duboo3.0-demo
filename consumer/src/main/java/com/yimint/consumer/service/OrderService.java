@@ -13,7 +13,7 @@ public class OrderService {
     private RestTemplate restTemplate;
 
     public String createOrder(){
-        User user = restTemplate.getForObject("http://localhost:8080/user/1", User.class);
+        User user = restTemplate.getForObject("http://localhost:8081/user/1", User.class);
         System.out.println("创建订单");
 
         return user.toString()+" succeeded in creating the order";

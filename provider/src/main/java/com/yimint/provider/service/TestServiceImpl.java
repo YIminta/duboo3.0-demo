@@ -4,7 +4,8 @@ import com.yimint.common.domain.User;
 import com.yimint.common.interfaces.TestService;
 import org.apache.dubbo.config.annotation.DubboService;
 
-@DubboService(group = "testService")
+//@DubboService(group = "testService")
+@DubboService
 public class TestServiceImpl implements TestService {
     @Override
     public User getUser(String uId) {

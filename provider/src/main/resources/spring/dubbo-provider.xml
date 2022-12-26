@@ -25,14 +25,18 @@
     <dubbo:application name="provider-application"/> <!-- #1 -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181?registry-type=service"/> <!-- #2 -->
 
+    <!-- 用rest协议在8090端口暴露服务 -->
     <dubbo:protocol name="rest" port="8090" server="netty"/> <!-- #3 -->
     <dubbo:protocol name="dubbo" port="20890" server="netty4"/> <!-- #4 -->
-
-    <dubbo:service interface="com.yimint.common.interfaces.TestService" protocol="rest" ref="testService"
-                   group="testService"/>  <!-- #5 -->
-    <dubbo:service interface="com.yimint.common.interfaces.UserService" protocol="dubbo" ref="userService"
-                   group="userService"/>  <!-- #5 -->
     <bean id="testService" class="com.yimint.provider.service.TestServiceImpl"/>
     <bean id="userService" class="com.yimint.provider.service.UserServiceImpl"/>
+
+    <!-- <dubbo:service/>声明需要暴露的服务提供者接口,如果是消费者就用<dubbo:reference/>，interface指定接口路径，protocol指定协议，ref为接口实现类的bean的id -->
+    <dubbo:service interface="com.yimint.common.interfaces.TestService" protocol="rest" ref="testService"
+                   group="testService"/>  <!-- #5 -->
+
+    <dubbo:service interface="com.yimint.common.interfaces.UserService" protocol="dubbo" ref="userService"
+                   group="userService"/>  <!-- #5 -->
+
 
 </beans>

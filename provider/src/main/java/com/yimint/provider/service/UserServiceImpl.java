@@ -2,11 +2,9 @@ package com.yimint.provider.service;
 
 import com.yimint.common.domain.User;
 import com.yimint.common.interfaces.UserService;
-import org.apache.dubbo.config.annotation.DubboService;
-import org.apache.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Service;
 
-//@DubboService(group = "userService")
-@DubboService
+@Service
 public class UserServiceImpl implements UserService {
 
     @Override

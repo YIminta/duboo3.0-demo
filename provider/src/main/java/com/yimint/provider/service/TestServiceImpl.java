@@ -2,10 +2,9 @@ package com.yimint.provider.service;
 
 import com.yimint.common.domain.User;
 import com.yimint.common.interfaces.TestService;
-import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.stereotype.Service;
 
-//@DubboService(group = "testService")
-@DubboService
+@Service
 public class TestServiceImpl implements TestService {
     @Override
     public User getUser(String uId) {

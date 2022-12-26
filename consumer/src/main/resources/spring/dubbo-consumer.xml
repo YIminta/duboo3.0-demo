@@ -25,9 +25,8 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-<!--    <dubbo:reference id="testService" interface="com.yimint.common.interfaces.TestService"
-                     group="testService" protocol="rest"/> 不知道为什么不能引入rest协议的服务-->
-
+    <dubbo:reference id="testService" interface="com.yimint.common.interfaces.TestService"
+                     group="testService" protocol="rest"/>
     <dubbo:reference id="userService" interface="com.yimint.common.interfaces.UserService"
                      group="userService" protocol="dubbo"/>
 

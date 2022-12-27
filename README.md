@@ -2,7 +2,7 @@
 
 转自 https://www.yuque.com/renyong-jmovm/dadudu/pl9i3u#yE806
 
-### Dubbo3.0入门教程与新特性介绍
+### Dubbo3.0新特性介绍&&配置dubbo和rest协议
 
 #### 注册模型的改变
 在服务注册领域，市面上有两种模型，一种是应用级注册，一种是接口级注册，在Spring Cloud中，一个应用是一个微服务，而在Dubbo2.7中，一个接口是一个微服务。

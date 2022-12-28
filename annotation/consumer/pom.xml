@@ -21,7 +21,6 @@
         <dependency>
             <groupId>com.yimint</groupId>
             <artifactId>annotation-common</artifactId>
-<!--            <version>${project.parent.version}</version>-->
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
@@ -59,7 +58,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
+        <!-- REST support dependencies -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>

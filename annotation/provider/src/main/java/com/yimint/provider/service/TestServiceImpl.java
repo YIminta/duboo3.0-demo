@@ -8,6 +8,9 @@ import org.apache.dubbo.config.annotation.DubboService;
 public class TestServiceImpl implements TestService {
     @Override
     public User getUser(String uId) {
+        if (uId.equals("6")) {
+            throw new IllegalArgumentException("id不能为6");
+        }
         return User.builder().id(uId).name("朱志超").build();
     }
 

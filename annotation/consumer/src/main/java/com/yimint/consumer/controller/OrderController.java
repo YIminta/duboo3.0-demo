@@ -2,6 +2,7 @@ package com.yimint.consumer.controller;
 
 import com.yimint.consumer.service.OrderService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -17,8 +18,8 @@ public class OrderController {
         return orderService.createOrder();
     }
 
-    @GetMapping("/testOrder")
-    public String testOrder() {
-        return orderService.testOrder();
+    @GetMapping("/testOrder/{id}")
+    public String testOrder(@PathVariable("id") String id) {
+        return orderService.testOrder(id);
     }
 }
